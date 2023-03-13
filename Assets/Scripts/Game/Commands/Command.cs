@@ -9,6 +9,12 @@ public abstract class Command
     protected Func<bool> conditionFunction;
     public abstract void Execute();
 
+    // Insures that conditionFunction will always be set
+    protected Command(Func<bool> conditionFunc)
+    {
+        conditionFunction = conditionFunc;
+    }
+
     public bool ShouldExecute()
     {
         if (conditionFunction == null)

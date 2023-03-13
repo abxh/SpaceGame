@@ -8,11 +8,10 @@ sealed class CounterThrustCommand : Command
     private readonly float _force;
     private readonly Rigidbody2D _body;
 
-    public CounterThrustCommand(float force, Rigidbody2D body, Func<bool> conditionFunc)
+    public CounterThrustCommand(float force, Rigidbody2D body, Func<bool> conditionFunc) : base(conditionFunc)
     {
         _force = force;
         _body = body;
-        conditionFunction = conditionFunc;
     }
 
     public override void Execute()

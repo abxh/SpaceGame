@@ -8,11 +8,10 @@ sealed class CounterTorqueCommand : Command
     private readonly float _torque;
     private readonly Rigidbody2D _body;
 
-    public CounterTorqueCommand(float torque, Rigidbody2D body, Func<bool> conditionFunc)
+    public CounterTorqueCommand(float torque, Rigidbody2D body, Func<bool> conditionFunc) : base(conditionFunc)
     {
         _torque = torque;
         _body = body;
-        conditionFunction = conditionFunc;
     }
 
     public override void Execute()
