@@ -107,6 +107,9 @@ class CounterTorqueCommand : CounterForceCommand
     }
 }
 
+// TODO:
+// 
+
 public class BasicShip : MonoBehaviour
 {
     List<ICommand> commands = new();
